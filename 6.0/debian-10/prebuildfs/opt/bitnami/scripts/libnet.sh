@@ -18,7 +18,7 @@
 #########################
 dns_lookup() {
     local host="${1:?host is missing}"
-    getent ahosts "$host" | awk '/STREAM/ {print $1 }'
+    getent -s hosts:dns ahosts "$host" | awk '/STREAM/ {print $1 }'
 }
 
 #########################
